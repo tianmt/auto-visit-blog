@@ -4,4 +4,4 @@ csdn:
   uname: XXXX       # 你的 CSDN ID
   loopdelay: 20     # 最小轮询访问间隔 (单位：分钟，随机数最大+5)
   visitdelay: 60    # 最大单条请求延迟
-  visitrate: 0.8    # 随机访问率 (随机选择所有链接中一定比率的链接访问)
+  visitrate: 0.5    # 随机访问率 (随机选择所有链接中一定比率的链接访问)

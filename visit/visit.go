@@ -2,6 +2,7 @@ package visit
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"sync"
 	"time"
@@ -16,7 +17,7 @@ var wg sync.WaitGroup
 func Work(blog_info link.BlogInfo) {
 	fmt.Println("Working...")
 	if blog_info.VisitLinkLen == 0 {
-		fmt.Println("visit link list is update now...")
+		log.Println("visit link list is being updated...")
 		return
 	}
 
@@ -54,7 +55,7 @@ func listGenerator(max int, cnt int) (lg map[int]int) {
 		if len(lg) < cnt {
 			tmp_num, err := tools.GetRandInt(0, max)
 			if err != nil {
-				fmt.Println(err)
+				log.Println(err)
 				return
 			}
 			lg[tmp_num] = tmp_num

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"time"
 
 	"auto-visit-blog/link"
@@ -30,6 +31,7 @@ func main() {
 
 	// 添加定时更新访问列表
 	go func(blog_info *link.BlogInfo) {
+		log.Println("Now update the blog link list.")
 		blog_info.UpdateAllBlogLinkList()
 		time.Sleep(time.Duration(8) * time.Hour)
 	}(&blog_info)

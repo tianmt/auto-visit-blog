@@ -29,7 +29,7 @@ func (blog_info *BlogInfo) CrawlCSDNOnePageLinkList(link string) (final bool) {
 	c.UserAgent = "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
 
 	c.OnRequest(func(r *colly.Request) {
-		fmt.Println("Visiting:", r.URL.String())
+		fmt.Println("crawl: ", r.URL.String())
 	})
 
 	c.OnHTML("div.article-list", func(e *colly.HTMLElement) {
