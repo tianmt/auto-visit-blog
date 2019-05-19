@@ -64,7 +64,7 @@ func (blog_info *BlogInfo) CrawlCSDNOnePageLinkList(link string) (final bool) {
 func (blog_info *BlogInfo) CrawlAllBlogLinkList() {
 	switch blog_info.CfgInfo.Bname {
 	case "csdn":
-		blog_info.Bpagelinktemplate = "https://blog.csdn.net/{{.BlogName}}//article/list/{{.BlogPageNum}}"
+		blog_info.Bpagelinktemplate = "https://blog.csdn.net/{{.BlogName}}/article/list/{{.BlogPageNum}}"
 		log.Println("match csdn.")
 		// 循环得到所有链接
 		// 由于请求URL时，服务器返回非所有链接，所以此处需要循环请求
