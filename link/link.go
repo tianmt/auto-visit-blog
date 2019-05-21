@@ -55,7 +55,12 @@ func (blog_info *BlogInfo) CrawlCSDNOnePageLinkList(link string) (final bool) {
 		}
 	})
 
-	_ = c.Visit(link)
+	err := c.Visit(link)
+	if err != nil {
+		// colly 返回的错误信息
+		log.Println("Visit error: ", err)
+		final = true
+	}
 
 	return final
 }
